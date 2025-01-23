@@ -28,11 +28,33 @@ def Entrada(fila):
 
 def Saida(fila):
     """retirar o primeiro nome na fila de espera"""
-    
+    # Verificar se a fila está vazia
+    if fila[0] == "":
+        print("A fila está vazia. ")
+        return
+    # Retirar o primeiro nome da fila
+    print(f"O cliente com o nome {fila[0]} pode entrar.")
+    # avançar os restantes nomes da fila uma posição
+    for i in range(NR_MAX-1):
+        fila[i] = fila[i+1]
 
+    fila[NR_MAX-1] == "" # Para limpar a última posição do array
 def ConsultarFila(fila):
     """Listar os nomes da fila de espera"""
-    print(fila)
+    # verificar se a fila está vazia
+    if fila[0] == "":
+        print("A fila está vazia. ")
+        return
+    # Listar os nomes das pessoas em espera
+    Fila_cheia = True
+    for posicao in range(NR_MAX):
+        if fila[posicao] == "":
+            Fila_cheia = False
+            break       
+        print(f"{posicao+1}º - {fila[posicao]}")
+    # verificar se a fila está cheia
+    if Fila_cheia == True:
+        print("Fila de espera está cheia.")
 
 def Main():
     fila = np.empty(NR_MAX,dtype="U20")

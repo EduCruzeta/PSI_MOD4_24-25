@@ -42,6 +42,8 @@ ultimo_nome_invertido = nome[-1:-6:-1]# Inverter o nome com indices negativos
 
 print(ultimo_nome_invertido)
 
+#------------------------------------------------------------------------------#
+
 import numpy as np
 
 nomes = np.array(["joaquim","maria","antónio","augusto","césar"])
