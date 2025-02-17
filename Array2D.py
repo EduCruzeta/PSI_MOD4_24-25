@@ -6,8 +6,10 @@ matriz = np.array([[1,2,3],[3,5,0]])
 
 print(matriz)
 # Primeiro elemento da matriz [l,c]
+
 print(matriz[0,0])
 # Ultimo elemento da matriz
+
 print(matriz[1,2])
 print(f"função len com matriz {len(matriz)}")
 # Percorrer todos os elementos da matriz

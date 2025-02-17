@@ -23,11 +23,16 @@ else:
     while troco > 0:
         for m in range(len(moedas)-1,-1,-1):
             # se existe a moeda e se o valor a devolver é maior doque a moeda
-            if moedas[m] < troco and stock[m] > 0:
+            if moedas[m] <= troco and stock[m] > 0:
                 moedas_a_devolver = moedas_a_devolver + str(moedas[m]) + ","
-                troco = troco - moedas[m]
+                troco = troco - round(moedas[m],2)
+                troco = round(troco,2)
                 stock[m] = stock[m] - 1
+                encontra = True
                 break
+        if encontra == False:
+            print("Não existem moedas suficientes para fazer o troco")
+            break
     print(f"Moedas a devolver: {moedas_a_devolver}")
     print(moedas,stock)
 
